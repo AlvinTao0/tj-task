@@ -23,7 +23,7 @@
         <el-form-item label="任务内容" prop="content">
           <el-input type="textarea" v-model="form.content"></el-input>
         </el-form-item>
-          <el-button v-if="isCreate" type="primary" @click="onSubmit">立即创建</el-button>
+          <el-button v-if="isCreate" type="primary" @click="create">立即创建</el-button>
           <el-button v-else type="primary" @click="save">保存</el-button>
           <el-button @click="clean">清空</el-button>
         </el-form-item>
@@ -49,7 +49,10 @@
       }
     },
     methods: {
-      onSubmit() {
+      setCount(n) {
+          this.$store.commit('setCount', n);
+      },
+      create() {
         var $this = this;
         console.log('submit!');
         var params = {
@@ -66,6 +69,8 @@
                 showClose: true,
                 message: data.msg
               });
+              $this.setCount(1);
+              $this.$router.push('/list')
             }
           })
       },

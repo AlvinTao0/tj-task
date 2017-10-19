@@ -24,16 +24,16 @@
       <el-table-column
         prop="title"
         label="任务名称"
-        width="100">
+        min-width="100">
       </el-table-column>
       <el-table-column
         prop="targetDate"
         label="日期"
-        width="120">
+        min-width="120">
       </el-table-column>
       <el-table-column
         label="操作"
-        width="150">
+        min-width="140">
         <template scope="scope" v-if="tableData.length > 0">
           <el-button @click="del(scope)" type="danger" size="small">删除</el-button>
           <el-button @click="edit(scope)" type="primary" size="small">编辑</el-button>
@@ -52,6 +52,9 @@
       }
     },
     methods: {
+      setCount(n) {
+          this.$store.commit('setCount', n);
+      },
       del(scope) {
         var $this = this;
         console.log(scope)
@@ -72,6 +75,7 @@
       },
       edit(scope) {
         var $this = this;
+        $this.setCount(0);
         $this.$router.push("/edit?_id=" + scope.row._id);
       },
       getList() {
