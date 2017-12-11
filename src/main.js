@@ -12,6 +12,9 @@ Vue.use(ElementUI)
 
 import store from './vuex/store'
 
+import _ from 'lodash'
+window._ = _
+
 Vue.config.productionTip = false
     /* eslint-disable no-new */
 new Vue({
