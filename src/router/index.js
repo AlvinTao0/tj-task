@@ -7,6 +7,7 @@ import edit from '@/components/edit'
 import list from '@/components/list'
 import other from '@/components/other'
 import login from '@/components/login'
+import tree from '@/components/tree'
 
 Vue.use(Router)
 
@@ -26,6 +27,11 @@ export default new Router({
             path: '/login',
             name: 'login',
             component: login
+        },
+        {
+            path: '/tree',
+            name: 'tree',
+            component: tree
         }
     ]
 })

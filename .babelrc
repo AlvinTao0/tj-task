@@ -3,12 +3,18 @@
     ["env", { "modules": false }],
     "stage-2"
   ],
-  "plugins": ["transform-runtime", ["component", [
-    {
-      "libraryName": "element-ui",
-      "styleLibraryName": "theme-default"
-    }
-  ]]],
+  "plugins": [
+    "transform-runtime", 
+    ["component", 
+      [
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-default"
+        }
+      ]
+    ],
+    "transform-vue-jsx"
+  ],
   "comments": false,
   "env": {
     "test": {
