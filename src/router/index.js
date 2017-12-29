@@ -8,8 +8,10 @@ import list from '@/components/list'
 import other from '@/components/other'
 import login from '@/components/login'
 import tree from '@/components/tree'
+
 import test from '@/components/test/index'
 import nextTick from '@/components/test/nextTick'
+import keyCodes from '@/components/test/keyCodes'
 
 Vue.use(Router)
 
@@ -40,7 +42,8 @@ export default new Router({
             name: 'test',
             component: test,
             children: [
-                {path: '/test/nextTick', name: 'nextTick', component: nextTick}
+                {path: '/test/nextTick', name: 'nextTick', component: nextTick},
+                {path: '/test/keyCodes', name: 'keyCodes', component: keyCodes}
             ]
         }
     ]

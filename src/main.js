@@ -16,6 +16,15 @@ import _ from 'lodash'
 window._ = _
 
 Vue.config.productionTip = false
+Vue.config.keyCodes = {
+    v: 86,
+    f1: 112,
+    // camelCase 不可用
+    mediaPlayPause: 179,
+    // 取而代之的是 kebab-case 且用双引号括起来
+    "media-play-pause": 50,
+    up: [38, 87]
+  }
     /* eslint-disable no-new */
 new Vue({
     el: '#app',
