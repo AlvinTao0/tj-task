@@ -8,6 +8,8 @@ import list from '@/components/list'
 import other from '@/components/other'
 import login from '@/components/login'
 import tree from '@/components/tree'
+import test from '@/components/test/index'
+import nextTick from '@/components/test/nextTick'
 
 Vue.use(Router)
 
@@ -32,6 +34,14 @@ export default new Router({
             path: '/tree',
             name: 'tree',
             component: tree
+        },
+        {
+            path: '/test',
+            name: 'test',
+            component: test,
+            children: [
+                {path: '/test/nextTick', name: 'nextTick', component: nextTick}
+            ]
         }
     ]
 })
