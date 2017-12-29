@@ -12,6 +12,7 @@ import tree from '@/components/tree'
 import test from '@/components/test/index'
 import nextTick from '@/components/test/nextTick'
 import keyCodes from '@/components/test/keyCodes'
+import directive from '@/components/test/directive'
 
 Vue.use(Router)
 
@@ -43,7 +44,8 @@ export default new Router({
             component: test,
             children: [
                 {path: '/test/nextTick', name: 'nextTick', component: nextTick},
-                {path: '/test/keyCodes', name: 'keyCodes', component: keyCodes}
+                {path: '/test/keyCodes', name: 'keyCodes', component: keyCodes},
+                {path: '/test/directive', name: 'directive', component: directive}
             ]
         }
     ]
