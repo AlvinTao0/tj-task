@@ -74,13 +74,13 @@ router.get('/task/save', function(req, res) {
     var _id = req.query._id;
     var wherestr = {"_id": _id};
     var params = req.query;
-    db.replaceOne(params, function(err) {
+    db.findOneAndUpdate(wherestr, params, function(err) {
         if (err) {
             return console.log(err);
         } else {
             var data = {
                 success: true,
-                msg: "编辑成功～"
+                msg: "保存成功～"
             };
             res.send(data);
         }

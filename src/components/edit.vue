@@ -91,6 +91,8 @@
                 showClose: true,
                 message: data.msg
               });
+              $this.setCount(1);
+              $this.$router.push('/list')
             }
           })
       },
