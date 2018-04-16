@@ -23,13 +23,13 @@ module.exports = {
     },
     dev: {
         env: require('./dev.env'),
-        port: 4002,
+        port: 4005,
         autoOpenBrowser: true,
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
             '/task': {
-                target: 'http://localhost:4003',
+                target: 'http://localhost:4005',
                 changeOrigin: true
             }
         },
